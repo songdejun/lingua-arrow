@@ -1,5 +1,5 @@
 #include "larrow/base/storage.h"
-#include "larrow/base/alloc.h"
+#include "larrow/base/allocator.h"
 #include "larrow/base/device_type.h"
 #include <cstring>
 #include <memory>
@@ -11,7 +11,7 @@ Storage::~Storage() {
     allocator_.release(ptr_);
   }
 }
-#
+
 std::shared_ptr<Storage> Storage::create() {
   return std::shared_ptr<Storage>(new Storage(), [](Storage *p) { delete p; });
 }

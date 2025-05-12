@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
+
 #include <exception>
+#include <iostream>
 #include <string>
 
-namespace utils {
-}
+namespace utils {}
