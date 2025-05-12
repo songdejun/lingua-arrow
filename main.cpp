@@ -2,11 +2,14 @@
 #include "larrow/base/storage.h"
 #include <cstddef>
 #include <iostream>
+#include <memory>
+#include <vector>
 
 int main() {
-  auto& a = base::CPUAllocator::instance();
-  void* ptr = a.allocate(1024);
-  a.release(ptr);
+  std::shared_ptr<base::Storage> storage2 = base::Storage::create(2048);
 
-  base::Storage storage(1024); 
+  std::shared_ptr<base::Storage> storage_ptr = base::Storage::create(1024);
+  std::cout << "change dierection." << std::endl;
+  storage_ptr = storage2->shared_ptr();
+  std::cout << "change end." << std::endl;
 }

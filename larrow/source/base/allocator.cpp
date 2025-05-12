@@ -1,4 +1,4 @@
-#include "larrow/base/alloc.h"
+#include "larrow/base/allocator.h"
 #include "larrow/base/device_type.h"
 #include "larrow/utils/debug.h"
 #include <cstddef>
